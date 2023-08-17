@@ -9,7 +9,7 @@
         "moduleResolution": "node",
         "sourceMap": true,
         "alwaysStrict": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
     },
     "exclude": ["node_modules", "**/node_modules/*"],
     "include": ["lib/**/*.js", "*.js", "lib/*.js"]

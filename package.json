@@ -3,6 +3,7 @@
   "version": "2022.05.0",
   "dependencies": {
     "@napi-rs/canvas": "0.1.21",
+    "colormap": "^2.3.2",
     "compression": "1.7.4",
     "express": "4.18.1",
     "mqtt": "4.3.7"

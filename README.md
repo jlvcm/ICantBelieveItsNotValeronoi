@@ -1,42 +1,40 @@
 <div align="center">
-    <a href="https://github.com/Hypfer/Valetudo">
-        <img src="https://github.com/Hypfer/Valetudo/blob/master/assets/logo/valetudo_logo_with_name.svg" width="800" alt="valetudo">
-    </a>
-    <p align="center"><h2>I can't believe it's not Valetudo</h2></p>
+    <p align="center"><h2>I can't believe it's not Valeronoi</h2></p>
 </div>
 
-ICBINV is a companion service for Valetudo that renders ValetudoMap map data to raster graphics.
+ICBINVOI is a companion service for Valetudo that renders ValetudoMap map data to raster graphics with Wifi strength data.
+
+The Wifi strength data is continuously collected and improved while the robot is cleaning, and you can watch it real time on the map.
 
 Incoming ValetudoMap Data is received via MQTT.
 Rendered map images are published to MQTT and can optionally also be requested via HTTP (if enabled)
 
-Please note that this service is only maintained on a very basic level.
+## Disclaimer
+
+This is a fork of [ICantBelieveItsNotValetudo](https://github.com/Hypfer/ICantBelieveItsNotValetudo) and inspired on [Valeronoi](https://github.com/ccoors/Valeronoi)
 
 ## Why would I need this?
 
-If you're using Home Assistant, you probably don't as the custom valetudo lovelace map card does a much better job
-than ICBINV while also being way easier to install, update and use.
-
-If you however use FHEM, OpenHAB or similar, this might be the only way to view the map data using your home automation system.
+ICBINVOI Allows you to view a WIFI strength map of your house.
 
 ## Installation
 
-The recommended install method for ICBINV is to clone the repo and then use the provided Dockerfile.
+The recommended install method for ICBINVOI is to clone the repo and then use the provided Dockerfile.
 
 With docker-compose, it would look something like this:
 
 ```
-  icantbelieveitsnotvaletudo:
+  icantbelieveitsnotvaleronoi:
     build:
-      context: ./ICantBelieveItsNotValetudo/
+      context: ./ICantBelieveItsNotValeronoi/
       dockerfile: Dockerfile
-    container_name: "ICantBelieveItsNotValetudo"
+    container_name: "ICantBelieveItsNotValeronoi"
     restart: always
     volumes:
-      - /opt/docker_containers/ICantBelieveItsNotValetudo/config.json:/app/config.json
+      - /opt/docker_containers/ICantBelieveItsNotValeronoi/config:/app/config
 ```
 
-If you have multiple robots, simply deploy multiple instances of ICBINV.
+If you have multiple robots, simply deploy multiple instances of ICBINVOI.
 
 
 If you don't want to use docker, you will need to install a recent nodejs version + npm installed on your host.
@@ -45,10 +43,10 @@ First, install the dependencies with `npm ci`. Then, you can start the applicati
 
 ## Configuration
 
-To configure *I can't believe it's not Valetudo*, create a file called `config.json` in the working directory.
+To configure *I can't believe it's not Valeronoi*, create a file called `config.json` in the `app` inside the working directory.
 You can also run `npm start` to automatically create a default configuration file.
 
-If you are running in docker, map the configuration file to `/app/config.json` .
+If you are running in docker, map the configuration file to `/app/config/config.json` .
 
 ## Integration with FHEM, ioBroker, openHAB etc
 

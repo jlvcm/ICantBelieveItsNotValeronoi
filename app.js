@@ -30,6 +30,7 @@ if (conf.get("mqtt")) {
         autoconfPrefix: conf.get("mqtt").autoconfPrefix,
         mapSettings: conf.get("mapSettings"),
         mapDataTopic: conf.get("mqtt").mapDataTopic,
+        wifiDataTopic: conf.get("mqtt").wifiDataTopic,
         minMillisecondsBetweenMapUpdates: conf.get("mqtt").minMillisecondsBetweenMapUpdates,
         publishMapImage: conf.get("mqtt").publishMapImage,
         publishAsBase64: conf.get("mqtt").publishAsBase64,
